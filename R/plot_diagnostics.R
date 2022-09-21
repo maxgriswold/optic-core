@@ -13,12 +13,6 @@
 plot_sims <- function(sim_results, ui = T, draws = 100, ui_alpha = 0.05){
   
   # Determine simulation type
-  sim_type <- ifelse("years_apart" %in% names(sim_results), "concurrent", "nonconcurrent")
-  
-  if (sim_type == "concurrent"){
-    
-    # Reduce sim_results to useful columns for identifying estimates or
-    # identifying simulation settings:
     sim_sub <- sim_results %>%
       select(sim_id, mod_id, iter, estimate1, se1, estimate2, se2)
     

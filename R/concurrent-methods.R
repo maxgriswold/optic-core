@@ -8,7 +8,9 @@
 #'
 #' @param single_simulation object created from SimConfig$setup_single_simulation()
 #' @export
+#' 
 concurrent_sample <- function(single_simulation) {
+  
   ##########################################
   ### PULL DATA AND PARAMETERS/VARIABLES ###
   ##########################################
