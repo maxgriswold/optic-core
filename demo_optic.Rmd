@@ -26,12 +26,18 @@ data("example_data")
 
 df <- setDT(example_data)
 
-# we will define two scenarios for different effect magnitudes for
-# the policies using 5, 10, and 15 percent changes in the outcome
+# We will define two scenarios for different effect magnitudes for
+# a hypothetical policies using 5, 10, and 15 percent changes in the outcome. In general,
+# the package user should specify scenarios using numbers that make sense for their
+# outcome variable (for example, if the outcome is mortality rates, then a 5%
+# average treatment effect would be equivalent to 0.05*average mortality 
+# rate across units.)
 
-linear5 <- 690 / ((sum(df$population) / length(unique(df$year))) / 100000)
-linear10 <- 1380 / ((sum(df$population) / length(unique(df$year))) / 100000)
-linear15 <- 2070 / ((sum(df$population) / length(unique(df$year))) / 100000)
+# Below scenarios correspond to percent changes in avverage opioid mortality rates
+# across US states between 1999-2017.
+linear5 <- 0.22
+linear10 <- 0.45
+linear15 <- 0.68
 
 scenario1 <- c(linear10, linear10)
 scenario2 <- c(linear5, linear15)
